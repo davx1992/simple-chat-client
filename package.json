@@ -31,8 +31,13 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm lint && npm typescript"
+      "pre-commit": "npm run lint && npm build"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "eslintIgnore": [
     "node_modules/",
