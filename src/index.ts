@@ -10,9 +10,9 @@ import {
 import { EventEmitter } from 'events';
 
 class SimpleChat extends EventEmitter {
-  socket: Socket | null = null;
-  status: ConnectionStatus = ConnectionStatus.DISCONNECTED;
-  config: Config;
+  private socket: Socket | null = null;
+  private status: ConnectionStatus = ConnectionStatus.DISCONNECTED;
+  private config: Config;
 
   constructor(config: Config) {
     super();

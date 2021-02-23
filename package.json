@@ -4,7 +4,7 @@
   "description": "Client for Simple Chat server",
   "main": "dist/index",
   "directories": {
-    "lib": "lib"
+    "dist": "dist"
   },
   "scripts": {
     "build": "tsc --build",
