@@ -1,12 +1,12 @@
-export interface Config {
+export type Config = {
   host: string;
   port: number;
   userId: string;
   accessToken: string;
   maxReconnectAttempts?: number;
-}
+};
 
-export interface Message {
+export type Message = {
   id?: string;
   to: string;
   timestamp: number;
@@ -15,12 +15,12 @@ export interface Message {
   };
   typing?: boolean;
   from?: string;
-}
+};
 
-export interface ValidationError {
+export type ValidationError = {
   field: string;
   error: string;
-}
+};
 
 export enum ChatTypes {
   SUC = '@suc',
