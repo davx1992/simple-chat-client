@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "Client for Simple Chat server",
   "main": "dist/index",
+  "types": "dist/index.d.ts",
   "directories": {
     "dist": "dist"
   },

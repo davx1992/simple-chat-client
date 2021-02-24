@@ -7,6 +7,14 @@ import {
   ConnectionStatus,
 } from './types/chat.types';
 
+export {
+  Config,
+  Message,
+  ValidationError,
+  ChatTypes,
+  ConnectionStatus,
+} from './types/chat.types';
+
 import { EventEmitter } from 'events';
 
 class SimpleChat extends EventEmitter {
