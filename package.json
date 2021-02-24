@@ -55,6 +55,14 @@
       "plugin:@typescript-eslint/recommended"
     ]
   },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    }
+  },
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
