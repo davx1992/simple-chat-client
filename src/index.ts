@@ -2,17 +2,17 @@ import { Socket, io } from 'socket.io-client';
 import {
   Config,
   Message,
-  ValidationError,
   ChatTypes,
   ConnectionStatus,
+  AppError,
 } from './types/chat.types';
 
 export {
   Config,
   Message,
-  ValidationError,
   ChatTypes,
   ConnectionStatus,
+  AppError,
 } from './types/chat.types';
 
 import { EventEmitter } from 'events';
@@ -165,7 +165,7 @@ class SimpleChat extends EventEmitter {
       this.socket?.emit(
         'message',
         message,
-        (messageId?: string, error?: ValidationError[]) => {
+        (messageId?: string, error?: AppError) => {
           if (error) {
             return reject(error);
           }
@@ -196,7 +196,7 @@ class SimpleChat extends EventEmitter {
         chatId,
         limit,
         after,
-        (messages?: Message[], error?: string) => {
+        (messages?: Message[], error?: AppError) => {
           if (error) {
             return reject(error);
           }
@@ -220,7 +220,7 @@ class SimpleChat extends EventEmitter {
         'join_chat',
         chatId,
         temp,
-        (success: boolean, error?: string) => {
+        (success: boolean, error?: AppError) => {
           if (error) {
             return reject(error);
           }
@@ -243,7 +243,7 @@ class SimpleChat extends EventEmitter {
       this.socket?.emit(
         'leave_chat',
         chatId,
-        (success: boolean, error?: string) => {
+        (success: boolean, error?: AppError) => {
           if (error) {
             return reject(error);
           }
@@ -275,7 +275,7 @@ class SimpleChat extends EventEmitter {
         'create_chat',
         type,
         users,
-        (chatId?: string, error?: string) => {
+        (chatId?: string, error?: AppError) => {
           if (error) {
             return reject(error);
           }

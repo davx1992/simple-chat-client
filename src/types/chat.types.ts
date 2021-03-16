@@ -17,10 +17,10 @@ export type Message = {
   from?: string;
 };
 
-export type ValidationError = {
-  field: string;
+export interface AppError {
+  code: number;
   error: string;
-};
+}
 
 export enum ChatTypes {
   SUC = '@suc',
